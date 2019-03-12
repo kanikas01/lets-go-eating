@@ -101,7 +101,7 @@ app.post("/api/tables", function(req, res) {
   
     console.log(newTable);
   
-    characters.push(newTable);
+    table.push(newTable);
   
     res.json(newTable);
   });
