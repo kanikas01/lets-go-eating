@@ -89,6 +89,11 @@ app.get("/api/tables/:table", function(req, res) {
     return res.json(false);
 });
 
+// Displays all waitlisted tables
+app.get("/api/waitlist", function(req, res) {
+    return res.json(waitlist);
+});
+
 // Create New Characters - takes in JSON input
 app.post("/api/tables", function(req, res) {
     // req.body hosts is equal to the JSON post sent from the user
@@ -101,9 +106,12 @@ app.post("/api/tables", function(req, res) {
   
     console.log(newTable);
   
-    table.push(newTable);
+    if (tables.push(newTable)) {
+        return res.json(true);
+    }
   
-    res.json(newTable);
+    // res.json(newTable);
+    return res.json(false);
   });
 
 app.listen(PORT, function() {
