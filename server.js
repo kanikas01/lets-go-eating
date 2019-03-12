@@ -46,6 +46,12 @@ var tables = [
       phone: '999-9999',
       email: 'ddowner@snl.com',
       id: 'LifeIsBad'
+    },
+    {
+      name: 'Charlie',
+      phone: '000-0000',
+      email: 'oh_so_charlie@snl.com',
+      id: 'HugMe'
     }
 ];
 
@@ -54,15 +60,15 @@ var tables = [
 // =============================================================
 
 app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "home.html"));
+    res.sendFile(path.join(__dirname, "views/home.html"));
 });
 
 app.get("/tables", function(req, res) {
-    res.sendFile(path.join(__dirname, "tables.html"));
+    res.sendFile(path.join(__dirname, "views/tables.html"));
 });
 
 app.get("/reserve", function(req, res) {
-    res.sendFile(path.join(__dirname, "reserve.html"));
+    res.sendFile(path.join(__dirname, "views/reserve.html"));
 });
 
 // Displays all tables
@@ -81,7 +87,24 @@ app.get("/api/tables/:table", function(req, res) {
         }
     }
     return res.json(false);
-})
+});
+
+// Create New Characters - takes in JSON input
+app.post("/api/tables", function(req, res) {
+    // req.body hosts is equal to the JSON post sent from the user
+    // This works because of our body parsing middleware
+    var newTable = req.body;
+  
+    // Using a RegEx Pattern to remove spaces from newCharacter
+    // You can read more about RegEx Patterns later https://www.regexbuddy.com/regex.html
+    // newTable.routeName = newcharacter.name.replace(/\s+/g, "").toLowerCase();
+  
+    console.log(newTable);
+  
+    table.push(newTable);
+  
+    res.json(newTable);
+  });
 
 app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
