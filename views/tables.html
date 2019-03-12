@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Tables Page</title>
+	<title>Solange - Tables</title>
 
 	<!-- Latest compiled and minified CSS & JS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
@@ -19,7 +19,7 @@
 	<div class="container">
 
 		<div class="content">
-			<h1 class="text-center"><span class="glyphicon glyphicon-fire"></span> Hot Restaurant</h1>
+			<h1 class="text-center"><span class="glyphicon glyphicon-fire"></span>Solange</h1>
 			<hr>
 			<h2 class="text-center">Current Reservations and Waiting List</h2>
 			<br>
@@ -136,7 +136,7 @@
 					var tableNumber = i + 1;
 
 					// Then display the remaining fields in the HTML (Section Name, Date, URL)
-					$("#waitlistWell-"+ i+1).append('<h2><span class="label label-primary">' + tableNumber + "</span> | " + waitlistData[i].ID + "</h2>");
+					$("#waitlistWell-"+ i+1).append('<h2><span class="label label-primary">' + tableNumber + "</span> | " + waitlistData[i].id + "</h2>");
 				}
 			});
 	}
