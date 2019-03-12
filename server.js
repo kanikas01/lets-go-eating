@@ -107,6 +107,7 @@ app.post("/api/tables", function(req, res) {
     console.log(newTable);
   
     if (tables.push(newTable)) {
+        alert('You booked a table. Superb.');
         return true;
     }
   
