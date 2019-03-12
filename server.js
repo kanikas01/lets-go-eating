@@ -49,7 +49,10 @@ var tables = [
       phone: '999-9999',
       email: 'ddowner@snl.com',
       id: 'LifeIsBad'
-    },
+    }
+];
+
+var waitlist = [
     {
       name: 'Charlie',
       phone: '000-0000',
@@ -57,7 +60,6 @@ var tables = [
       id: 'HugMe'
     }
 ];
-
 
 // Routes
 // =============================================================
@@ -108,13 +110,15 @@ app.post("/api/tables", function(req, res) {
     // newTable.routeName = newcharacter.name.replace(/\s+/g, "").toLowerCase();
   
     console.log(newTable);
-  
-    if (tables.push(newTable)) {
-        return res.json(true);
+    if (tables.length < 5) {
+      tables.push(newTable);
+      return res.json(true);
     }
-  
-    // res.json(newTable);
-    return res.json(false);
+
+    else {
+      waitlist.push(newTable);
+      return res.json(false);
+    }
   });
 
 app.listen(PORT, function() {
