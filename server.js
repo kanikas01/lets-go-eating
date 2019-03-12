@@ -46,6 +46,12 @@ var tables = [
       phone: '999-9999',
       email: 'ddowner@snl.com',
       id: 'LifeIsBad'
+    },
+    {
+      name: 'Charlie',
+      phone: '000-0000',
+      email: 'oh_so_charlie@snl.com',
+      id: 'HugMe'
     }
 ];
 
