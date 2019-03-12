@@ -107,12 +107,11 @@ app.post("/api/tables", function(req, res) {
     console.log(newTable);
   
     if (tables.push(newTable)) {
-        alert('You booked a table. Superb.');
-        return true;
+        return res.json(true);
     }
   
     // res.json(newTable);
-    return false;
+    return res.json(false);
   });
 
 app.listen(PORT, function() {
