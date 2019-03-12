@@ -106,9 +106,12 @@ app.post("/api/tables", function(req, res) {
   
     console.log(newTable);
   
-    table.push(newTable);
+    if (table.push(newTable)) {
+        return true;
+    }
   
-    res.json(newTable);
+    // res.json(newTable);
+    return false;
   });
 
 app.listen(PORT, function() {
