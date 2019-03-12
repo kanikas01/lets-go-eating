@@ -106,7 +106,7 @@ app.post("/api/tables", function(req, res) {
   
     console.log(newTable);
   
-    if (table.push(newTable)) {
+    if (tables.push(newTable)) {
         return true;
     }
   
